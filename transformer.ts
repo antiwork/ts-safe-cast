@@ -68,13 +68,15 @@ const handleCall = (checker: ts.TypeChecker, node: ts.CallExpression) => {
 			const types = [];
 			for(let i = 0; i < type.types.length; ++i) {
 				const part = type.types[i]!;
-				const baseType = checker.getBaseTypeOfLiteralType(part);
-				if(baseType.isUnion()) {
-					const count = baseType.types.length;
-					if (i + count <= type.types.length && type.types[i + count - 1] === baseType.types[count - 1]) {
-						types.push(baseType);
-						i += count - 1;
-						continue;
+				if(!(type.flags & ts.TypeFlags.EnumLike)) {
+					const baseType = checker.getBaseTypeOfLiteralType(part);
+					if(baseType.isUnion()) {
+						const count = baseType.types.length;
+						if (i + count <= type.types.length && type.types[i + count - 1] === baseType.types[count - 1]) {
+							types.push(baseType);
+							i += count - 1;
+							continue;
+						}
 					}
 				}
 				types.push(part);

@@ -1,6 +1,6 @@
 {
   "name": "ts-safe-cast",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.ts",
   "author": "Gumroad Developers",
   "license": "MIT",
@@ -9,10 +9,10 @@
     "typescript": ">=4.6"
   },
   "devDependencies": {
-    "typescript": "~5.4.3"
+    "typescript": "~5.6.3"
   },
   "dependencies": {
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.17.6"
   },
   "repository": {
     "type": "git",
