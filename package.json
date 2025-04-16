@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gumroad/ts-safe-cast"
+    "url": "git://github.com/antiwork/ts-safe-cast"
   },
   "scripts": {
     "build": "tsc"
